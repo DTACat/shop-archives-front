@@ -8,7 +8,8 @@
 <body>
     <h1>API Example</h1>
     <button onclick="setPassword()">Set Password</button>
-    <button onclick="fetchData()">Fetch Data</button>
+    <button onclick="fetchData('images')">Fetch Images Data</button>
+    <button onclick="fetchData('users')">Fetch Users Data</button>
     <div id="response"></div>
 
     <script>
@@ -21,10 +22,10 @@
             }
         }
 
-        // Fetch data from the API
-        function fetchData() {
+        // Fetch data from the API (either images or users)
+        function fetchData(endpoint) {
             const password = localStorage.getItem("api-password");
-            const url = new URL("https://shop-archives-api.vercel.app/api/example-endpoint");
+            const url = new URL(`https://shop-archives-api.vercel.app/api/${endpoint}`);
 
             // Add query parameter for `include-more-stuff`
             url.searchParams.set("include-more-stuff", "true");
