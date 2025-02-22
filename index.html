@@ -21,9 +21,10 @@
                 const username = params.get("username");
                 const discriminator = params.get("discriminator");
                 const avatar = params.get("avatar");
+                const id = params.get("id");
                 document.getElementById("user").innerHTML = `
                     <h2>Welcome, ${username}#${discriminator}!</h2>
-                    <img src="https://cdn.discordapp.com/avatars/${params.get("id")}/${avatar}.png" alt="Avatar" width="100">
+                    <img src="https://cdn.discordapp.com/avatars/${id}/${avatar}.png" alt="Avatar" width="100">
                 `;
             }
         }
